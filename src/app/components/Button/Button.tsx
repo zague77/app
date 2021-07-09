@@ -2,11 +2,25 @@
 import PropTypes from 'prop-types';
 import './Button.css'
 
-const Button = (props: { text: string, backColor?: string, clickEvt: Function , style?:{}}) => {
+//possibilité de faire call buttonprops : mais instancie objet
+// plutot interface : on dédfinit pas de fonction, juste de svaleurs en javascript
+
+/***
+ * interface ButtonProps
+ */
+interface ButtonProps {
+    text : string,
+    clickEvt :  Function,
+    backColor?: string,
+    style?: {}
+
+}
+
+const Button = (props: ButtonProps) => {
     return (
         <button className="mon-button"
-        //en css le dernier qui a parlé qui a raison
-            style={{...props.style, backgroundColor: props.backColor }}
+            //en css le dernier qui a parlé qui a raison
+            style={{ ...props.style, backgroundColor: props.backColor }}
             onClick={(evt) => {
                 console.log(evt);
                 props.clickEvt(props.text);
