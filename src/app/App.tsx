@@ -9,7 +9,7 @@ interface State {
 
 export default class App extends React.Component<Props, {}> {
   state: State
-  constructor(props: Props) {
+  constructor(props: any) {
     super(props)
     this.state = { values: [15,12,80,7,70] }
   }
