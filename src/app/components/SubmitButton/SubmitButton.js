@@ -1,11 +1,6 @@
-
-
-import React from 'react'
-import PropTypes from 'prop-types'
-
-// rfcp
-// 
-
+import React from 'react';
+import PropTypes from 'prop-types';
+import  './SubmitButton.css';
 
 const SubmitButton = (props) => {
     return (
@@ -13,27 +8,23 @@ const SubmitButton = (props) => {
             backgroundColor: props.backColor,
             border: 'none',
             color: 'white',
-            fontSize: '32pt',
+            fontSize: '18pt',
             fontWeight: '900',
-            padding: '5px 10px',
-            boxshadow: '10px 10px 25px grey',
-            margin: '10px 20px'
+            padding: '3px 6px',
+            borderRadius: '8px',
+            boxShadow: '10px 10px 25px grey',
+            margin: '5px 10px',
         }}>
-            {props.children}
-        </button>
+            { props.children}
+        </button >
     );
 };
-
 
 
 SubmitButton.propTypes = {
     children: PropTypes.node.isRequired,
     backColor: PropTypes.string.isRequired
+};
+SubmitButton.defaultProps={ backColor: 'green' }
 
-}
-
-
-SubmitButton.defaultProps = { backColor: 'green' }
-
-
-export default SubmitButton; 
+export default SubmitButton;

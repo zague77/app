@@ -1,6 +1,5 @@
 import React from 'react'
-import Button from '../Button/Button'
-import SubmitButton from '../SubmitButton/SubmitButton';
+import SubmitButton from '../SubmitButton/SubmitButton'
 import styles from './Values.module.css';
 interface Props {
   values: Array<number>
@@ -11,8 +10,8 @@ interface Props {
 export const Values: React.FunctionComponent<Props> = props => {
 
   return <>
-    <div className={styles.ValuesForm}>
-      <form onSubmit={(evt) => {
+    <div className={styles.ValuesForm} data-testid="ValuesFrom">
+      <form onSubmit={(evt:React.SyntheticEvent) => {
         evt.preventDefault()
         console.log(evt)
         const target = evt.target as typeof evt.target & {
@@ -22,22 +21,19 @@ export const Values: React.FunctionComponent<Props> = props => {
       }}>
         <input type="number" name="inputValueToAdd" />
         {/* <button type="submit">Ajouter valeur</button> */}
-    
-        <SubmitButton><img src="https://cdn4.iconfinder.com/data/icons/simplicio/128x128/file_add.png" style={{width:'32px'}}/>Ajouter</SubmitButton>
-        
-
+        <SubmitButton><img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678092-sign-add-256.png" style={{width:'32px'}}/>Ajouter</SubmitButton>
       </form>
     </div>
-    <div className={styles.ValuesViewer}>
+    <div className={styles.ValuesViewer} data-testid="ValuesViewer">
       <h2>Resultats</h2>
       <table>
         <thead>
           <tr><td>Value</td><td>actions</td></tr>
         </thead>
-        <tbody>
+        <tbody data-testid={`tab-body`}>
           {
             props.values.map((value, index) => {
-              return <tr key={`tab-val-${index}`}><td>{value}</td><td>delete</td></tr>
+              return <tr data-testid={`tab-val-${index}`} key={`tab-val-${index}`}><td>{value}</td><td>delete</td></tr>
             })
           }
         </tbody>

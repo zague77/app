@@ -1,30 +1,28 @@
-//import React from 'react';
+// import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.css'
-
-//possibilité de faire call buttonprops : mais instancie objet
-// plutot interface : on dédfinit pas de fonction, juste de svaleurs en javascript
-
-/***
- * interface ButtonProps
+/**
+ * interface des props pour mon Button
  */
 interface ButtonProps {
-    text : string,
-    clickEvt :  Function,
-    backColor?: string,
-    style?: {}
-
+    /**
+     * contenu text du benjamin
+     */
+   text: string,
+   clickEvt: Function,
+   backColor?: string, 
+   style?:{} 
 }
-
-const Button = (props: ButtonProps) => {
+const Button = (props:ButtonProps ) => {
     return (
         <button className="mon-button"
-            //en css le dernier qui a parlé qui a raison
-            style={{ ...props.style, backgroundColor: props.backColor }}
+            style={{...props.style, backgroundColor: props.backColor }}
             onClick={(evt) => {
                 console.log(evt);
                 props.clickEvt(props.text);
-            }} >{props.text}</button>
+            }}
+            data-testid="Button"
+            >{props.text}</button>
     );
 };
 
@@ -38,7 +36,7 @@ Button.propTypes = {
 Button.defaultProps = {
     backColor: 'green',
     clickEvt: (text: string) => {
-        console.log('button clicked -->' + text);
+        console.log('button cliecked -->' + text);
     }
 };
 
