@@ -1,11 +1,12 @@
-import React from 'react';
+//import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.css'
 
-const Button = (props: { text: string, backColor?: string, clickEvt: Function }) => {
+const Button = (props: { text: string, backColor?: string, clickEvt: Function , style?:{}}) => {
     return (
         <button className="mon-button"
-            style={{ backgroundColor: props.backColor }}
+        //en css le dernier qui a parlé qui a raison
+            style={{...props.style, backgroundColor: props.backColor }}
             onClick={(evt) => {
                 console.log(evt);
                 props.clickEvt(props.text);
@@ -23,7 +24,7 @@ Button.propTypes = {
 Button.defaultProps = {
     backColor: 'green',
     clickEvt: (text: string) => {
-        console.log('button cliecked -->' + text);
+        console.log('button clicked -->' + text);
     }
 };
 

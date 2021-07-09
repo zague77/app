@@ -9,7 +9,7 @@ function App() {
     <div className="App">
      <h1>Voici mon button</h1>
      <Button text ="Une valeur" backColor="bluesky"/>
-     <Button text ="Une autre valeur" backColor="tomato"/>
+     <Button text ="Une autre valeur" backColor="tomato" style={{textDecoration:'underline green',fontStyle:'italic'}}/>
      <Button text ="Une autre valeur" backColor="green"/>
      </div>
   );
