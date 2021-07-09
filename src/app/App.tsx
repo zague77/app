@@ -15,7 +15,7 @@ export default class App extends React.Component<Props, {}> {
     return <div className="App">
       <Values values={this.state.values}
         addValue={(index: number) => {
-          console.log('add value');
+          console.log('add value'+index);
         }}
         deleteValue={(index: number) => {
           console.log('delete value');
