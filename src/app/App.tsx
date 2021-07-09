@@ -9,7 +9,7 @@ export default class App extends React.Component<Props, {}> {
   state: State
   constructor(props: Props) {
     super(props)
-    this.state = { values: [15,12,80,7,70] }
+    this.state = { values: [15,12,80,7,70,20] }
   }
   render() {
     return <div className="App">

@@ -1,1 +1,7 @@
-.Values {}
+.ValuesForm{
+    display:inline-block;
+}
+
+.ValuesViewer{
+    display:inline-block;
+}
