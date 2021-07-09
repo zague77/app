@@ -16,6 +16,9 @@ export default class App extends React.Component<Props, {}> {
       <Values values={this.state.values}
         addValue={(index: number) => {
           console.log('add value'+index);
+
+          // mise à jour des données
+          this.setState({values:[...this.state.values,index]})
         }}
         deleteValue={(index: number) => {
           console.log('delete value');
